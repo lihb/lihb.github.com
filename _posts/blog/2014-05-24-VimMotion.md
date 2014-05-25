@@ -31,23 +31,26 @@ sentences
 
 **is**：语句内部
 
-```vim
+```
 Text objects beginning with a include the surrounding white space in the text object.those starting with i do not. This convention is fo*llowed by all text objects.
 ```
 
 在光标处输入命令：`cis`
-```vim
+
+```
 Text objects beginning with a include the surrounding white space in the text object.those starting with i do not. 
 ```
+
 结果为：删除光标所在行，并自动进入`插入模式`。
 
 Paragraphs
 ==========
+
 **ap**：一个段落
 
 **ip**：段落内部
 
-```vim
+```
 Lorem ips*um dolor sit amet, consectetur adipisicing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
 nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -55,13 +58,16 @@ nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.
-```
-在光标处输入命令：`dap`---删除一整个段落
-```vim
 
+```
+
+在光标处输入命令：`dap`---删除一整个段落
+
+```
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.
+
 ```
 其他一些特性
 ============
