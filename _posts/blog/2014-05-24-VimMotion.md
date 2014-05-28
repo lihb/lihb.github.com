@@ -122,12 +122,12 @@ html标签
 示例：
 
 ```
-       源字符                命令          处理后           备注
-<h2>Sample Title</h2>        dit         <h2>*</h2>    只删除标签里的内容 
-<h2>Sample Title</h2>        dat           *              整个删除
+           源字符                命令          处理后           备注
+    <h2>Sample Title</h2>        dit         <h2>*</h2>    只删除标签里的内容 
+    <h2>Sample Title</h2>        dat           *              整个删除
 
-<h2>Sample Title</h2>        cit         <h2>*</h2>      进入插入模式
-<h2>Sample Title</h2>        cat            *            进入插入模式
+    <h2>Sample Title</h2>        cit         <h2>*</h2>      进入插入模式
+    <h2>Sample Title</h2>        cat            *            进入插入模式
 
 ```
 
