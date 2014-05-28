@@ -85,6 +85,7 @@ mollit anim id est laborum.
 示例:
 
 ```
+
 源字符               命令          处理后的字符        备注
 
 bsfesr(dfest)tert   di)或di(      bsfesr(*)tert
