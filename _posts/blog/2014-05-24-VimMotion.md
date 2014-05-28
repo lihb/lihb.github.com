@@ -86,11 +86,14 @@ mollit anim id est laborum.
 
 ```
 源字符               命令          处理后的字符        备注
+
 bsfesr(dfest)tert   di)或di(      bsfesr(*)tert
+
 hello(lhb)world     da(或da)      hello*world
 
 
 bsfesr(dfest)tert   ci)或ci(      bsfesr(*)tert     进入插入模式
+
 hello(lhb)world     ca(或ca)      hello*world       进入插入模式
 
 ```
