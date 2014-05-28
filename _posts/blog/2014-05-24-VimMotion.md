@@ -84,21 +84,6 @@ mollit anim id est laborum.
 
 示例:
 
-<table>
-    <tr>
-        <td>源字符</td>
-        <td>命令</td>
-        <td>处理后的字符</td>
-        <td>备注</td>
-    </tr>
-    <tr>
-        <td>bsfesr(dfest)tert</td>
-        <td>di)或di(</td>
-        <td> bsfesr(*)tert</td>
-        <td>   </td>
-    </tr>
-</table>
-
 ```
 
 源字符               命令          处理后的字符        备注
