@@ -71,10 +71,10 @@ mollit anim id est laborum.
 ```
 其他一些特性
 ============
+
 **di[", ', ], ), }]**-----分别删除" ", ' ', [ ], ( ), { }的内容
 
 **da[", ', ], ), }]**-----分别删除" ", ' ', [ ], ( ), { }的内容,带括号符号一起删除。
-
 
 **ci[", ', ], ), }]**-----分别删除" ", ' ', [ ], ( ), { }的内容,进入`插入模式`，光标在符号内部。
 
@@ -83,6 +83,7 @@ mollit anim id est laborum.
     ps:此时光标须在符号之间：(*sdfdrg)或者(hhkk*hzsf)或者(sfdstr*)都行。
 
 示例:
+
 ```
 源字符               命令          处理后的字符        备注
 bsfesr(dfest)tert   di)或di(      bsfesr(*)tert
@@ -93,11 +94,14 @@ bsfesr(dfest)tert   ci)或ci(      bsfesr(*)tert     进入插入模式
 hello(lhb)world     ca(或ca)      hello*world       进入插入模式
 
 ```
+
 html标签
 -------
+
 同上类似，括号符号用`t`(tag)代替
 
 示例：
+
 ```
        源字符                命令          处理后           备注
 <h2>Sample Title</h2>        dit         <h2>*</h2>    只删除标签里的内容 
