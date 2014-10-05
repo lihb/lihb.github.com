@@ -60,10 +60,10 @@ lhb@lhb-PC /media/lhb/e/testDir $ ls
 a.txt  b.txt  c.txt
 lhb@lhb-PC /media/lhb/e/testDir $ echo $?
 0
-lhb@lhb-PC /media/lhb/e/testDir $ [ 5 -lt 6 ]  # 判断5<=6
+lhb@lhb-PC /media/lhb/e/testDir $ [ 5 -lt 6 ]  # 判断5<6
 lhb@lhb-PC /media/lhb/e/testDir $ echo $?
 0
-lhb@lhb-PC /media/lhb/e/testDir $ [ 5 -gt 6 ]  # 判断5>=6
+lhb@lhb-PC /media/lhb/e/testDir $ [ 5 -gt 6 ]  # 判断5>6
 lhb@lhb-PC /media/lhb/e/testDir $ echo $?
 1
 
@@ -72,12 +72,12 @@ lhb@lhb-PC /media/lhb/e/testDir $ echo $?
 **if语句的语法格式：**
 
 ```
-if xxx ;then
-    condition1
-elif xxx;then
-    condition2
+if condition1 ;then
+    xxxx
+elif condition2;then
+    xxxx
 else
-    condition3
+    xxxx
 fi
 
 ```
@@ -167,7 +167,7 @@ ps:  如果两个字符串长度不同时，系统会先为较短的字符串后
 
 #### 5.shell中将命令执行的结果作为输入
 
-语法：** `ls` **
+语法：** \`命令\` **
 
 示例:
 ```
@@ -181,7 +181,7 @@ else
     echo "other..."
 fi
 done
-                ~
+
 ```
 结果：
 
