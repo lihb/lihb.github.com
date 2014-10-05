@@ -203,7 +203,7 @@ ShellDemo.sh is a execution file.
 
 ```
 lhb@lhb-PC ~ $ read pi
-3.1415926
+3.1415926  # 这是从控制台输入的。
 lhb@lhb-PC ~ $ echo "the pi is $pi"
 the pi is 3.1415926
 ```
