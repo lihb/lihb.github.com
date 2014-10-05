@@ -74,7 +74,7 @@ lhb@lhb-PC /media/lhb/e/testDir $ echo $?
 ```
 if xxx ;then
     condition1
-else xxx;then
+elif xxx;then
     condition2
 else
     condition3
