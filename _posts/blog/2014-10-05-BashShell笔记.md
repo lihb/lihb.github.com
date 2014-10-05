@@ -197,6 +197,17 @@ ShellDemo.sh is a execution file.
 
 ```
 
+#### read读取控制台数据给参数赋值
+
+示例
+
+```
+lhb@lhb-PC ~ $ read pi
+3.1415926  #这是从控制台输入的。
+lhb@lhb-PC ~ $ echo "the pi is $pi"
+the pi is 3.1415926
+```
+
 #### 其他语法知识点
 
 * while 循环
