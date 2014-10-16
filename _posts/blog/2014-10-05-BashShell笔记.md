@@ -1,11 +1,11 @@
 ---
 layout: post
-title: BaseShell笔记
+title: BashShell笔记
 description: shell编程的简单笔记
 category: blog
 ---
 
-简单记录本人学习shell编程的知识点。
+简单记录本人学习Linux shell编程的知识点。
 
 #### 1.普通变量
 
