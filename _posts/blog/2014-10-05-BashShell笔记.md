@@ -207,6 +207,26 @@ lhb@lhb-PC ~ $ read pi
 lhb@lhb-PC ~ $ echo "the pi is $pi"
 the pi is 3.1415926
 ```
+#### 7.重定向输入输出
+
+`0` : 标准输入
+`1` : 标准输出
+`2` : 标准错误输出
+
+```
+lhb@lhb-PC ~/testDir $ >1.txt   # 若有该文件，则清空文件内容，若没有，则生成新
+文件
+lhb@lhb-PC ~/testDir $ ls >1.txt  # 将ls的内容重定向到1.txt文件中
+lhb@lhb-PC ~/testDir $ ls >>1.txt # 将ls的内容追加到1.txt文件中
+lhb@lhb-PC ~/testDir $ ls dddfsfstr >a.txt # 命令失败，1.txt中不会打印出错误
+信息
+lhb@lhb-PC ~/testDir $ ls dddfsfstr 2>a.txt # 命令执行成功，错误信息会打印到
+a.txt中
+lhb@lhb-PC ~/testDir $ read A <a.txt #将a.txt中内容保存为变量A
+lhb@lhb-PC ~/testDir $ echo $A
+lhb@lhb-PC ~/testDir $ ls dddfsfstr >a.txt 2>&1 #将标准错误输出2，重定向到1中
+
+```
 
 #### 其他语法知识点
 
