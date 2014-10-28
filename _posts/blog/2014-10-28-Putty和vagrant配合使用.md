@@ -16,12 +16,13 @@ category: blog
 使用方法如下：
 
 ```
-F:\>pscp -P 2222 PUTTY.CHM vagrant@127.0.0.1:/tmp #将windows系统f盘目录下的PUTTY.CHM文件上传到vagrant虚拟机的/tmp目录下
+F:\>pscp -P 2222 PUTTY.CHM vagrant@127.0.0.1:/tmp  # 将windows系统f盘目录下的PUTTY.CHM文件上传到vagrant虚拟机的/tmp目录下
 
-F:\>pscp -P 2222 vagrant@127.0.0.1:/tmp/* d:\  #将vagrant系统/tmp目录下的所有文件上传到windows系统的d盘
+F:\>pscp -P 2222 vagrant@127.0.0.1:/tmp/* d:\  # 将vagrant系统/tmp目录下的所有文件上传到windows系统的d盘
 ```
 
 ## 参考文献
 
 1.pscp命令的帮助文档: `pscp --help`
+
 2.[Windows下SSH客服端PuTTY–详细使用教程](http://my.oschina.net/acejimmyster/blog/26249)
