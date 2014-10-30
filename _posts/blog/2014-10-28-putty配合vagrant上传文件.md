@@ -11,7 +11,7 @@ category: blog
 
 ## 利用putty工具实现真机与虚拟机的文件共享（通用）
 
-主要用的是一个putty的一个工具软件：**pscp.exe**
+主要用的是一个putty工具集中的一个工具软件叫**pscp.exe**
 
 使用方法如下：
 
