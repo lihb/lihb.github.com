@@ -10,6 +10,14 @@
   
   
     选择文件:<input type="file" name="file">  
+    
+    <div class="operate">
+        	 <form action="/Market/upload/file.do" method="post" enctype="multipart/form-data" style="display:none;" name= "uploadForm">
+            	<input onchange="document.uploadForm.submit();" type="file" name="file"  />
+       		 </form>
+ 
+       		 <a onclick="document.uploadForm.file.click();" href="javascript:void(0);" >上传文件</a>
+        </div>
       
   
   
