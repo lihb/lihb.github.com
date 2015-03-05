@@ -5,9 +5,8 @@ category: opinion
 description: 随便写点什么东西 
 ...
 
-[承香墨影](http://www.cnblogs.com/plokmju/)
 
-[Android--多线程之Looper](http://www.cnblogs.com/plokmju/p/android_Looper.html)
+该博文转载自[Android--多线程之Looper](http://www.cnblogs.com/plokmju/p/android_Looper.html)
 -------------------------------------------------------------------------------
 
 **前言**
@@ -107,63 +106,63 @@ description: 随便写点什么东西
 
 　　实现代码：
 
-     1 package com.example.handlerlooperdemo;
-     2 
-     3 import android.app.Activity;
-     4 import android.os.Bundle;
-     5 import android.os.Handler;
-     6 import android.os.Looper;
-     7 import android.os.Message;
-     8 import android.util.Log;
-     9 import android.view.View;
-    10 import android.widget.Button;
-    11 import android.widget.Toast;
-    12 
-    13 public class WorkThreadActivity extends Activity {
-    14     private Button btnSendToWorkUI;
-    15     private Handler handler;
-    16     @Override
-    17     protected void onCreate(Bundle savedInstanceState) {
-    18         super.onCreate(savedInstanceState);
-    19         setContentView(R.layout.looper_activity2);
-    20         
-    21         // 在UI线程中开启一个子线程
-    22         new Thread(new Runnable() {            
-    23             @Override
-    24             public void run() {
-    25                 // 在子线程中初始化一个Looper对象
-    26                 Looper.prepare();
-    27                 handler=new Handler(){
-    28                     @Override
-    29                     public void handleMessage(Message msg) {
-    30                         super.handleMessage(msg);
-    31                         // 把UI线程发送来的消息显示到屏幕上。
-    32                         Log.i("main", "what="+msg.what+","+msg.obj);
-    33                         Toast.makeText(WorkThreadActivity.this, "what="+msg.what+","+msg.obj, Toast.LENGTH_SHORT).show();
-    34                     }
-    35                 };    
-    36                 // 把刚才初始化的Looper对象运行起来，循环消息队列的消息
-    37                 Looper.loop();
-    38             }
-    39         }).start();
-    40         
-    41         btnSendToWorkUI=(Button)findViewById(R.id.btnSendToWorkUI);
-    42         
-    43         btnSendToWorkUI.setOnClickListener(new View.OnClickListener() {            
-    44             @Override
-    45             public void onClick(View v) {
-    46                 // onClick方法是运行在UI线程上的 
-    47                 Message msg=Message.obtain();
-    48                 msg.what=1;
-    49                 msg.obj="向子线程中发送消息！";
-    50                 // 向子线程中发送消息
-    51                 handler.sendMessage(msg);
-    52             }
-    53         });
-    54     }
-    55     
-    56     
-    57 }
+    package com.example.handlerlooperdemo;
+    
+    import android.app.Activity;
+    import android.os.Bundle;
+    import android.os.Handler;
+    import android.os.Looper;
+    import android.os.Message;
+    import android.util.Log;
+    import android.view.View;
+    import android.widget.Button;
+    import android.widget.Toast;
+    
+    public class WorkThreadActivity extends Activity {
+        private Button btnSendToWorkUI;
+        private Handler handler;
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.looper_activity2);
+            
+            // 在UI线程中开启一个子线程
+            new Thread(new Runnable() {            
+                @Override
+                public void run() {
+                    // 在子线程中初始化一个Looper对象
+                    Looper.prepare();
+                    handler=new Handler(){
+                        @Override
+                        public void handleMessage(Message msg) {
+                            super.handleMessage(msg);
+                            // 把UI线程发送来的消息显示到屏幕上。
+                            Log.i("main", "what="+msg.what+","+msg.obj);
+                            Toast.makeText(WorkThreadActivity.this, "what="+msg.what+","+msg.obj, Toast.LENGTH_SHORT).show();
+                        }
+                    };    
+                    // 把刚才初始化的Looper对象运行起来，循环消息队列的消息
+                    Looper.loop();
+                }
+            }).start();
+            
+            btnSendToWorkUI=(Button)findViewById(R.id.btnSendToWorkUI);
+            
+            btnSendToWorkUI.setOnClickListener(new View.OnClickListener() {            
+                @Override
+                public void onClick(View v) {
+                    // onClick方法是运行在UI线程上的 
+                    Message msg=Message.obtain();
+                    msg.what=1;
+                    msg.obj="向子线程中发送消息！";
+                    // 向子线程中发送消息
+                    handler.sendMessage(msg);
+                }
+            });
+        }
+        
+        
+    }
 
 　　效果展示：
 
