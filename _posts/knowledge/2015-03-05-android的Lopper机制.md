@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Android--多线程之Looper - 承香墨影 - 博客园'
-category: knowledge
 description: 随便写点什么东西 
+category: knowledge
 ...
 
 
