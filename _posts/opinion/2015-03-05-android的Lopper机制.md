@@ -30,72 +30,72 @@ description: 随便写点什么东西
 
 　　实现代码：
 
-     1 package com.example.handlerlooperdemo;
-     2 
-     3 import android.app.Activity;
-     4 import android.os.Bundle;
-     5 import android.os.Handler;
-     6 import android.os.Looper;
-     7 import android.os.Message;
-     8 import android.view.View;
-     9 import android.widget.Button;
-    10 import android.widget.TextView;
-    11 
-    12 public class MainThreadActivity extends Activity {
-    13     private Button btnSendToUI1, btnSendToUI2;
-    14     private TextView tvSendMes1;
-    15     private static MyHandler handler;
-    16 
-    17     @Override
-    18     protected void onCreate(Bundle savedInstanceState) {
-    19         super.onCreate(savedInstanceState);
-    20         setContentView(R.layout.looper_activity);
-    21         tvSendMes1 = (TextView) findViewById(R.id.tvSendMes1);
-    22         btnSendToUI1 = (Button) findViewById(R.id.btnSendToUI1);
-    23         btnSendToUI2 = (Button) findViewById(R.id.btnSendToUI2);
-    24 
-    25         btnSendToUI1.setOnClickListener(new View.OnClickListener() {
-    26             @Override
-    27             public void onClick(View v) {
-    28                 // 使用Activity内部的Looper对象
-    29                 handler=new MyHandler();
-    30                 Message msg=Message.obtain();
-    31                 msg.what=1;
-    32                 msg.obj="默认Looper";
-    33                 handler.sendMessage(msg);
-    34             }
-    35         });
-    36         btnSendToUI2.setOnClickListener(new View.OnClickListener() {
-    37             @Override
-    38             public void onClick(View v) {
-    39                 // 获取当前线程的Looper
-    40                 Looper looper=Looper.myLooper();
-    41                 handler=new MyHandler(looper);
-    42                 
-    43                 Message msg=Message.obtain();
-    44                 msg.what=2;
-    45                 msg.obj="使用当前线程的Looper";
-    46                 handler.sendMessage(msg);
-    47             }
-    48         });
-    49     }
-    50 
-    51     public class MyHandler extends Handler {
-    52 
-    53         public MyHandler() {
-    54         }
-    55 
-    56         public MyHandler(Looper looper) {
-    57             super(looper);
-    58         }
-    59 
-    60         @Override
-    61         public void handleMessage(Message msg) {
-    62             super.handleMessage(msg);
-    63             tvSendMes1.setText("what=" + msg.what + "," + msg.obj);
-    64         }
-    65     }
-    66 }
+    package com.example.handlerlooperdemo;
+    
+    import android.app.Activity;
+    import android.os.Bundle;
+    import android.os.Handler;
+    import android.os.Looper;
+    import android.os.Message;
+    import android.view.View;
+    import android.widget.Button;
+    import android.widget.TextView;
+    
+    public class MainThreadActivity extends Activity {
+        private Button btnSendToUI1, btnSendToUI2;
+        private TextView tvSendMes1;
+        private static MyHandler handler;
+    
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.looper_activity);
+            tvSendMes1 = (TextView) findViewById(R.id.tvSendMes1);
+            btnSendToUI1 = (Button) findViewById(R.id.btnSendToUI1);
+            btnSendToUI2 = (Button) findViewById(R.id.btnSendToUI2);
+    
+            btnSendToUI1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 使用Activity内部的Looper对象
+                    handler=new MyHandler();
+                    Message msg=Message.obtain();
+                    msg.what=1;
+                    msg.obj="默认Looper";
+                    handler.sendMessage(msg);
+                }
+            });
+            btnSendToUI2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 获取当前线程的Looper
+                    Looper looper=Looper.myLooper();
+                    handler=new MyHandler(looper);
+                    
+                    Message msg=Message.obtain();
+                    msg.what=2;
+                    msg.obj="使用当前线程的Looper";
+                    handler.sendMessage(msg);
+                }
+            });
+        }
+    
+        public class MyHandler extends Handler {
+    
+            public MyHandler() {
+            }
+    
+            public MyHandler(Looper looper) {
+                super(looper);
+            }
+    
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                tvSendMes1.setText("what=" + msg.what + "," + msg.obj);
+            }
+        }
+    }
 
 　　实现效果：
 
@@ -177,34 +177,3 @@ description: 随便写点什么东西
 
 　　本篇博客讲解了Handler在发送消息的原理，并且也说明了如何在UI线程和子线程中互相通信的方式，虽然在实际开发过程中，很少会用到UI线程向子线程发送消息的实现，但是通过这个例子也更好的说明了Looper的原理。
 
- 
-
-posted on 2013-08-22 08:10 [承香墨影](http://www.cnblogs.com/plokmju/)
-阅读(...) 评论(...)
-[编辑](http://i.cnblogs.com/EditPosts.aspx?postid=3266988) [收藏](#)
-
-[刷新评论](javascript:void(0);)[刷新页面](#)[返回顶部](#top)
-
-[博客园首页](http://www.cnblogs.com/ "开发者的网上家园")[博问](http://q.cnblogs.com/ "程序员问答社区")[新闻](http://news.cnblogs.com/ "IT新闻")[闪存](http://home.cnblogs.com/ing/)[程序员招聘](http://job.cnblogs.com/)[知识库](http://kb.cnblogs.com/)
-
-Powered by: \
- [博客园](http://www.cnblogs.com/) \
- Copyright © 承香墨影
-
-### 导航
-
--   [博客园](http://www.cnblogs.com/)
--   [首页](http://www.cnblogs.com/plokmju/)
--   [新随笔](http://i.cnblogs.com/EditPosts.aspx?opt=1)
--   [联系](http://space.cnblogs.com/msg/send/%e6%89%bf%e9%a6%99%e5%a2%a8%e5%bd%b1)
--   [订阅](http://www.cnblogs.com/plokmju/rss)[![订阅](http://www.cnblogs.com/images/xml.gif)](http://www.cnblogs.com/plokmju/rss)
--   [管理](http://i.cnblogs.com/)
-
-### 统计
-
--   随笔 - 80
--   文章 - 2
--   评论 - 260
--   引用 - 0
-
-### 公告
