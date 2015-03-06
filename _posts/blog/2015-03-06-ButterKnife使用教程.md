@@ -11,21 +11,21 @@ category: blog
 
 **Butterknife的特性：**
 
-*支持 Activity 中的 View 注入
+* 支持 Activity 中的 View 注入
 
-*支持 View 中的 View 注入
+* 支持 View 中的 View 注入
 
-*支持 View 事件回调函数注入
+* 支持 View 事件回调函数注入
 
 **目前支持如下事件回调函数：**
 
-•	View: @OnLongClick and @OnFocusChanged.
+- View: @OnLongClick and @OnFocusChanged.
 
-•	TextView: @OnEditorAction.
+- TextView: @OnEditorAction.
 
-•	AdapterView: @OnItemClick and @OnItemLongClick.
+- AdapterView: @OnItemClick and @OnItemLongClick.
 
-•	CompoundButton: @OnCheckedChanged.
+- CompoundButton: @OnCheckedChanged.
 
 ### 安装及配置
 
