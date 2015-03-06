@@ -44,7 +44,7 @@ dependencies {
 
 2.1 Eclipse中的配置
 
-右键单击工程，选择propertie--->java compile---> Annotation Processing，勾选 "Enable project specific settings"。如下图所示：
+右键单击工程，选择properties--->java compile---> Annotation Processing，勾选 "Enable project specific settings"。如下图所示：
 
 ![eclipse配置1](/images/ButterKnife/eclipse1.png)
 
