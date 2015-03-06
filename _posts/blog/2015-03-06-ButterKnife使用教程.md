@@ -5,7 +5,7 @@ description: 教你如何快速上手Butterknife
 category: blog
 ---
 
-### 简介
+### 一、简介
 
 使用ButterKnife框架，可以使你从大量的findViewById中解脱出来，更专注于业务逻辑的实现。
 
@@ -27,7 +27,7 @@ category: blog
 
 - CompoundButton: @OnCheckedChanged.
 
-### 安装及配置
+### 二、安装及配置
 
 1.去[官网](http://jakewharton.github.io/butterknife/)或者[github](https://github.com/JakeWharton/butterknife)下载jar包（目前最新版本为：butterknife-6.1.0.jar），放到工程的libs目录，如果你使用的是Android Studio，在app目录下的build.gradle中添加如下依赖即可：
 
@@ -58,7 +58,7 @@ dependencies {
 
 ![idea配置1](/images/ButterKnife/idea.jpg)
 
-### 使用
+### 三、使用
 
 没使用butterknife之前，你的代码如下：
 
@@ -247,7 +247,7 @@ public class FancyFragment extends Fragment {
 }
 ```
 
-### 参考文献
+### 四、参考文献
 
 * [eclipse中的详细配置](http://jakewharton.github.io/butterknife/ide-eclipse.html)
 * [Butterknife----View注入框架](http://stormzhang.com/openandroid/android/2014/01/12/android-butterknife/)
