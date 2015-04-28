@@ -236,6 +236,7 @@ public class FancyFragment extends Fragment {
     }
 }
 
+
 ```
 
 另外，还支持**可选**的 View注入，如果该 View 没有，也没关系：
@@ -246,6 +247,15 @@ public class FancyFragment extends Fragment {
     // TODO ...
 }
 ```
+
+**Android Studio、Idea插件**
+
+ [android-butterknife-zelezny](https://github.com/avast/android-butterknife-zelezny)
+
+ 演示：
+
+ ![插件](/images/ButterKnife/external_link.gif)
+
 
 ### 四、参考文献
 
